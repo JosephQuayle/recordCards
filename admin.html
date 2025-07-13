@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Client Records</title>
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,65 +10,81 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <title>Client Records</title>
   </head>
-
   <body>
     <h1>All Clients</h1>
 
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>First Name</th>
-          <th>Surname</th>
-          <th>Email</th>
-          <th>DOB</th>
-          <th>Occupation</th>
-          <th>Mobile</th>
-          <th>Address</th>
-          <th>GP Address</th>
-          <th>Medical</th>
-          <th>Signature</th>
-          <th>Date Signed</th>
-          <th>Action</th>
+          <th data-label="ID">ID</th>
+          <th data-label="First Name">First Name</th>
+          <th data-label="Surname">Surname</th>
+          <th data-label="Email">Email</th>
+          <th data-label="DOB">DOB</th>
+          <th data-label="Occupation">Occupation</th>
+          <th data-label="Mobile">Mobile</th>
+          <th data-label="Address">Address</th>
+          <th data-label="GP Address">GP Address</th>
+          <th data-label="Medical">Medical</th>
+          <th data-label="Signature">Signature</th>
+          <th data-label="Date Signed">Date Signed</th>
+          <th data-label="Action">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>101</td>
-          <td>Ella</td>
-          <td>Thompson</td>
-          <td>ella.thompson@example.com</td>
-          <td>1990-06-15</td>
-          <td>Hair Stylist</td>
-          <td>07123 456789</td>
-          <td>123 Rosewood Street, Sheffield</td>
-          <td>456 GP Lane, Sheffield</td>
-          <td>None</td>
-          <td>EllaT</td>
-          <td>2025-07-10</td>
-          <td>
+          <td data-label="ID">1</td>
+          <td data-label="First Name">Ella</td>
+          <td data-label="Surname">Thompson</td>
+          <td data-label="Email">ella.thompson@example.com</td>
+          <td data-label="DOB">1990-06-15</td>
+          <td data-label="Occupation">Hair Stylist</td>
+          <td data-label="Mobile">07123 456789</td>
+          <td data-label="Address">123 Rosewood Street</td>
+          <td data-label="GP Address">456 GP Lane</td>
+          <td data-label="Medical">None</td>
+          <td data-label="Signature">EllaT</td>
+          <td data-label="Date Signed">2025-07-10</td>
+          <td data-label="Action">
             <button class="genLink" data-clientid="101">Generate Link</button>
           </td>
         </tr>
         <tr>
-          <td>102</td>
-          <td>Jack</td>
-          <td>Evans</td>
-          <td>jack.evans@example.com</td>
-          <td>1985-11-22</td>
-          <td>Massage Therapist</td>
-          <td>07000 998877</td>
-          <td>22 Oak Grove, Leeds</td>
-          <td>Highfield Surgery, Leeds</td>
-          <td>Asthma</td>
-          <td>JackE</td>
-          <td>2025-07-12</td>
-          <td>
+          <td data-label="ID">2</td>
+          <td data-label="First Name">Jack</td>
+          <td data-label="Surname">Evans</td>
+          <td data-label="Email">jack.evans@example.com</td>
+          <td data-label="DOB">1985-11-22</td>
+          <td data-label="Occupation">Massage Therapist</td>
+          <td data-label="Mobile">07000 998877</td>
+          <td data-label="Address">22 Oak Grove</td>
+          <td data-label="GP Address">Highfield Surgery</td>
+          <td data-label="Medical">Asthma</td>
+          <td data-label="Signature">JackE</td>
+          <td data-label="Date Signed">2025-07-12</td>
+          <td data-label="Action">
             <button class="genLink" data-clientid="102">Generate Link</button>
           </td>
         </tr>
-        <!-- Add more rows as needed -->
+        <tr>
+          <td data-label="ID">3</td>
+          <td data-label="First Name">Priya</td>
+          <td data-label="Surname">Singh</td>
+          <td data-label="Email">priya.singh@example.com</td>
+          <td data-label="DOB">1995-03-09</td>
+          <td data-label="Occupation">Skincare Consultant</td>
+          <td data-label="Mobile">07555 321654</td>
+          <td data-label="Address">12 Willow Avenue</td>
+          <td data-label="GP Address">Birchwood Clinic</td>
+          <td data-label="Medical">Eczema</td>
+          <td data-label="Signature">PriyaS</td>
+          <td data-label="Date Signed">2025-07-14</td>
+          <td data-label="Action">
+            <button class="genLink" data-clientid="103">Generate Link</button>
+          </td>
+        </tr>
       </tbody>
     </table>
 

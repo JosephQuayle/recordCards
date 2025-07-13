@@ -65,7 +65,7 @@ $(document).ready(function () {
       });
   });
 
-  // 1) Admin page: generate & copy signed link
+  // 1) view clients page: generate & copy signed link
   $("button.genLink").on("click", function () {
     const btn = $(this);
     const clientId = btn.data("clientid");

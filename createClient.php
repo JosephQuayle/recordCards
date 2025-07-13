@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['adminId'])) {
+  header("Location: adminLogin.php");
+  exit;
+}
+
 require_once __DIR__ . '/../includes/recordConnection.php';
 
 ?>

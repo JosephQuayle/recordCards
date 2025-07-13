@@ -17,7 +17,7 @@
   /* margin: 0 auto; */
 }
 
-/* admin.php */
+/* view clients page */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -30,7 +30,7 @@ thead {
 
 th,
 td {
-  padding: 0.75em;
+  padding: 0.45em;
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
@@ -48,11 +48,16 @@ td {
     background: #fff;
   }
 
+  td:first-child {
+    background-color: #e0e0e0; /* soft gray background */
+    font-weight: bold;
+  }
+
   td {
     display: block;
-    text-align: right;
+    text-align: left;
     position: relative;
-    padding-left: 50%;
+    padding-left: 35%;
     border: none;
     border-bottom: 1px solid #eee;
   }
@@ -60,8 +65,8 @@ td {
   td::before {
     content: attr(data-label);
     position: absolute;
-    left: 0.75em;
-    top: 0.75em;
+    left: 0.45em;
+    top: 0.45em;
     font-weight: bold;
     color: #333;
     text-align: left;
@@ -72,7 +77,6 @@ td {
   }
 
   button.genLink {
-    margin-top: 0.75em;
     width: 100%;
   }
 }
