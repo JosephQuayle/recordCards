@@ -1,14 +1,30 @@
 * {
   font-family: "Outfit", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+}
+
+#heading {
+  text-align: center;
+  width: 100%;
 }
 
 #recordForm {
   display: flex;
   flex-direction: column;
-  width: 10%;
+  width: 30%;
+  margin: 0 auto;
 }
 
 #productList:empty {
+  display: none;
+}
+
+#medicalList:empty {
   display: none;
 }
 
@@ -35,6 +51,59 @@ td {
   border-bottom: 1px solid #ccc;
 }
 
+table tr:nth-child(even) {
+  background-color: #ffe4e1; /* light pink */
+}
+
+table tr:nth-child(odd) {
+  background-color: #fff0f5; /* lavender blush */
+}
+
+table th {
+  background-color: #fd78a4; /* darker pink */
+}
+
+/* create client page */
+.create-client-wrapper,
+.view-client-wrapper {
+  margin: 1rem;
+}
+
+/* nav stuff */
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  /* background-color: pink; */
+  width: 100%;
+  background-color: #fd78a4;
+  padding: 1rem;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links li a:hover {
+  color: white;
+}
+
 @media (max-width: 768px) {
   thead {
     display: none;
@@ -44,13 +113,26 @@ td {
     display: block;
     margin-bottom: 1em;
     border: 1px solid #ddd;
-    padding: 0.75em;
-    background: #fff;
   }
 
-  td:first-child {
-    background-color: #e0e0e0; /* soft gray background */
-    font-weight: bold;
+  table tr:nth-child(even) {
+    background-color: #ffffff; /* light pink */
+  }
+
+  table tr:nth-child(odd) {
+    background-color: #ffffff; /* lavender blush */
+  }
+
+  table th {
+    background-color: #fd78a4; /* darker pink */
+  }
+
+  table td:nth-child(even) {
+    background-color: #ffe4e1; /* light pink */
+  }
+
+  table td:nth-child(odd) {
+    background-color: #fff0f5; /* lavender blush */
   }
 
   td {
@@ -78,5 +160,14 @@ td {
 
   button.genLink {
     width: 100%;
+  }
+
+  #recordForm {
+    width: 100%;
+  }
+
+  table td:first-child {
+    font-weight: bold;
+    background-color: #fd78a4 !important;
   }
 }

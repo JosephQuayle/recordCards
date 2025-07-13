@@ -42,53 +42,61 @@ if (!$result) {
 </head>
 
 <body>
-    <h1>All Clients</h1>
+    <ul class="nav-bar">
+        <div class="nav-links">
+            <li><a href="createClient.php">Create New Client</a></li>
+            <li><a href="viewClients.php">View Client Records</a></li>
+        </div>
 
-    <?php if (mysqli_num_rows($result) === 0): ?>
-        <p>No client records found.</p>
-    <?php else: ?>
-        <table>
-            <thead>
-                <tr>
-                    <th data-label="ID">ID</th>
-                    <th data-label="First Name">First Name</th>
-                    <th data-label="Surname">Surname</th>
-                    <th data-label="Email">Email</th>
-                    <th data-label="DOB">DOB</th>
-                    <th data-label="Occupation">Occupation</th>
-                    <th data-label="Mobile">Mobile</th>
-                    <th data-label="Address">Address</th>
-                    <th data-label="GP Address">GP Address</th>
-                    <th data-label="Medical">Medical</th>
-                    <th data-label="Signature">Signature</th>
-                    <th data-label="Date Signed">Date Signed</th>
-                    <th data-label="Action">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+    </ul>
+    <div class="view-client-wrapper">
+        <h1 id="heading">All Clients</h1>
+
+        <?php if (mysqli_num_rows($result) === 0): ?>
+            <p>No client records found.</p>
+        <?php else: ?>
+            <table>
+                <thead>
                     <tr>
-                        <td data-label="ID"><?= htmlspecialchars($row['recordId']) ?></td>
-                        <td data-label="First Name"><?= htmlspecialchars($row['clientFirstName']) ?></td>
-                        <td data-label="Surname"><?= htmlspecialchars($row['clientSurname']) ?></td>
-                        <td data-label="Email"><?= htmlspecialchars($row['clientEmail']) ?></td>
-                        <td data-label="DOB"><?= htmlspecialchars($row['clientDOB']) ?></td>
-                        <td data-label="Occupation"><?= htmlspecialchars($row['clientOccupation']) ?></td>
-                        <td data-label="Mobile"><?= htmlspecialchars($row['clientMobile']) ?></td>
-                        <td data-label="Address"><?= htmlspecialchars($row['clientAddress']) ?></td>
-                        <td data-label="GP Address"><?= htmlspecialchars($row['clientGPAddress']) ?></td>
-                        <td data-label="Medical"><?= htmlspecialchars($row['clientMedical']) ?></td>
-                        <td data-label="Signature"><?= htmlspecialchars($row['clientSignature']) ?></td>
-                        <td data-label="Date Signed"><?= htmlspecialchars($row['clientSignedDate']) ?></td>
-                        <td data-label="Action">
-                            <button class="genLink" data-clientid="<?= (int)$row['recordId'] ?>">Generate Link</button>
-                        </td>
+                        <th data-label="ID">ID</th>
+                        <th data-label="First Name">First Name</th>
+                        <th data-label="Surname">Surname</th>
+                        <th data-label="Email">Email</th>
+                        <th data-label="DOB">DOB</th>
+                        <th data-label="Occupation">Occupation</th>
+                        <th data-label="Mobile">Mobile</th>
+                        <th data-label="Address">Address</th>
+                        <th data-label="GP Address">GP Address</th>
+                        <th data-label="Medical">Medical</th>
+                        <th data-label="Signature">Signature</th>
+                        <th data-label="Date Signed">Date Signed</th>
+                        <th data-label="Action">Action</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    <?php endif; ?>
-
+                </thead>
+                <tbody>
+                    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                        <tr>
+                            <td data-label="ID"><?= htmlspecialchars($row['recordId']) ?></td>
+                            <td data-label="First Name"><?= htmlspecialchars($row['clientFirstName']) ?></td>
+                            <td data-label="Surname"><?= htmlspecialchars($row['clientSurname']) ?></td>
+                            <td data-label="Email"><?= htmlspecialchars($row['clientEmail']) ?></td>
+                            <td data-label="DOB"><?= htmlspecialchars($row['clientDOB']) ?></td>
+                            <td data-label="Occupation"><?= htmlspecialchars($row['clientOccupation']) ?></td>
+                            <td data-label="Mobile"><?= htmlspecialchars($row['clientMobile']) ?></td>
+                            <td data-label="Address"><?= htmlspecialchars($row['clientAddress']) ?></td>
+                            <td data-label="GP Address"><?= htmlspecialchars($row['clientGPAddress']) ?></td>
+                            <td data-label="Medical"><?= htmlspecialchars($row['clientMedical']) ?></td>
+                            <td data-label="Signature"><?= htmlspecialchars($row['clientSignature']) ?></td>
+                            <td data-label="Date Signed"><?= htmlspecialchars($row['clientSignedDate']) ?></td>
+                            <td data-label="Action">
+                                <button class="genLink" data-clientid="<?= (int)$row['recordId'] ?>">Generate Link</button>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
     <?php
     mysqli_free_result($result);
     mysqli_close($conn);

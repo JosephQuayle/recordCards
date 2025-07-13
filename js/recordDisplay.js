@@ -6,28 +6,6 @@ $(document).ready(function () {
   $("#saveDetails").click(function (e) {
     console.log("details saved");
 
-    //client info values
-    // let clientName = $("#fname").val();
-    // console.log(clientName);
-    // let secondName = $("#sname").val();
-    // console.log(secondName);
-    // let email = $("#email").val();
-    // console.log(email);
-    // let dob = $("#dob").val();
-    // console.log(dob);
-    // let address = $("#address").val();
-    // console.log(address);
-    // let gpaddress = $("#gpaddress").val();
-    // console.log(gpaddress);
-    // let occupation = $("#occupation").val();
-    // console.log(occupation);
-    // let medical = $("#medical").val();
-    // console.log(medical);
-    // let sign = $("#sign").val();
-    // console.log(sign);
-    // let dateSigned = $("#date").val();
-    // console.log(dateSigned);
-
     e.preventDefault();
 
     // Gather form values
@@ -55,6 +33,13 @@ $(document).ready(function () {
       .done(function (res) {
         if (res.success) {
           alert("Client saved! Record ID: " + res.recordId);
+          //clear form here
+          $("#recordForm").find("input").val("");
+          $("#recordForm").find("input, textarea").val("");
+          $("#medicalList").empty();
+          // clears the visible condition list
+          $("#medicalInput").val(""); // clears the input box
+          $("#medical").val(""); // clears the hidden field sent to the DB
         } else {
           alert("Error: " + res.error);
         }
@@ -176,7 +161,7 @@ $(document).ready(function () {
           </tr>`;
             $("#newEntryRow").after(rowHtml);
 
-            // reset form
+            // reset forms
             $("#treatmentForm")[0].reset();
             $("#productList").empty();
           } else {
@@ -235,6 +220,35 @@ $(document).ready(function () {
       items.push($(this).text().replace("×", "").trim());
     });
     $("#productsUsed").val(items.join("\n"));
+  }
+
+  $("#addMedical").on("click", function () {
+    const condition = $("#medicalInput").val().trim();
+    if (condition === "") return;
+
+    // Add to visible list
+    $("#medicalList").append(
+      `<li>${escapeHtml(condition)} <button class="remove">×</button></li>`
+    );
+
+    // Clear input
+    $("#medicalInput").val("");
+
+    // Sync hidden field
+    syncMedical();
+  });
+
+  $("#medicalList").on("click", ".remove", function () {
+    $(this).parent().remove();
+    syncMedical();
+  });
+
+  function syncMedical() {
+    const conditions = [];
+    $("#medicalList li").each(function () {
+      conditions.push($(this).text().replace("×", "").trim());
+    });
+    $("#medical").val(conditions.join("\n")); // sync with hidden <textarea id="medical">
   }
 
   function escapeHtml(text) {

@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION['adminId'])) {
-  header("Location: adminLogin.php");
-  exit;
+    header("Location: adminLogin.php");
+    exit;
 }
 
 require_once __DIR__ . '/../includes/recordConnection.php';
@@ -24,41 +24,57 @@ require_once __DIR__ . '/../includes/recordConnection.php';
 </head>
 
 <body>
-    <h1 id="heading">Record Cards</h1>
-    <div id="recordForm">
-        <label for="fName">First Name</label>
-        <input type="text" name="fName" id="fname">
-        <label for="sName">Second Name</label>
-        <input type="text" name="sName" id="sname">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        <label for="dob">Date of Birth</label>
-        <input type="date" name="dob" id="dob">
-        <label for="phone">Phone</label>
-        <input type="text" name="phone" id="phone">
-        <label for="address">Address</label>
-        <input type="text" name="address" id="address">
-        <label for="gpaddress">GP Address</label>
-        <input type="text" name="gpaddress" id="gpaddress">
-        <label for="occupation">Occupation</label>
-        <input type="text" name="occupation" id="occupation">
-        <label for="medical">Medical Conditions</label>
-        <textarea name="medical" id="medical"></textarea>
-        <label for="sign">Sign</label>
-        <input type="text" name="sign" id="sign">
-        <label for="dateofsign">Date</label>
-        <input type="date" name="dateofsign" id="date">
-        <button id="saveDetails">Save Details</button>
-        <label for="treatment">Treatment</label>
-        <input type="text" name="treatment" id="treatment">
-        <label for="productsused">Products Used</label>
-        <textarea name="productsused" id="productsUsed"></textarea>
-        <label for="treatdate">Date</label>
-        <input type="date" name="treatdate" id="treatdate">
-        <label for="studentsign">Student Sign</label>
-        <input type="text" name="studentsign" id="studentsign">
-        <Button id="saveTreatment">Save Treatment Info</Button>
+    <ul class="nav-bar">
+        <div class="nav-links">
+            <li><a href="createClient.php">Create New Client</a></li>
+            <li><a href="viewClients.php">View Client Records</a></li>
+        </div>
+
+    </ul>
+    <div class="create-client-wrapper">
+        <h1 id="heading">Record Cards</h1>
+
+        <div id="recordForm">
+            <label for="fName">First Name</label>
+            <input type="text" name="fName" id="fname">
+            <br>
+            <label for="sName">Second Name</label>
+            <input type="text" name="sName" id="sname">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+            <br>
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone">
+            <br>
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address">
+            <br>
+            <label for="gpaddress">GP Address</label>
+            <input type="text" name="gpaddress" id="gpaddress">
+            <br>
+            <label for="occupation">Occupation</label>
+            <input type="text" name="occupation" id="occupation">
+            <br>
+            <label for="medicalInput">Medical Conditions</label>
+            <input type="text" id="medicalInput" placeholder="Enter condition">
+            <button style="margin-top: 5px;" type="button" id="addMedical">Add</button>
+            <ul id="medicalList"></ul>
+            <textarea name="medical" id="medical" hidden></textarea>
+            <br>
+            <label for="sign">Sign</label>
+            <input type="text" name="sign" id="sign">
+            <br>
+            <label for="dateofsign">Date</label>
+            <input type="date" name="dateofsign" id="date">
+            <br>
+            <button id="saveDetails">Save Details</button>
+        </div>
     </div>
+
 </body>
 
 </html>

@@ -11,6 +11,7 @@ if (!isset($_SESSION['adminId'])) {
 
 <head>
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./styles/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -19,13 +20,13 @@ if (!isset($_SESSION['adminId'])) {
 
     <ul>
         <li><a href="createClient.php">Create New Client</a></li>
+        <br>
         <li><a href="viewClients.php">View Client Records</a></li>
-        <li>
-            <form method="POST" action="adminLogout.php" style="display:inline;">
-                <button type="submit">Logout</button>
-            </form>
-        </li>
+        <br>
     </ul>
+    <form method="POST" action="adminLogout.php" style="display:inline;">
+        <button type="submit">Logout</button>
+    </form>
 </body>
 
 </html>
