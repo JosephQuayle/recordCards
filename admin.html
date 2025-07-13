@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Client Records</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h1>All Clients</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>DOB</th>
+          <th>Occupation</th>
+          <th>Mobile</th>
+          <th>Address</th>
+          <th>GP Address</th>
+          <th>Medical</th>
+          <th>Signature</th>
+          <th>Date Signed</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Ella</td>
+          <td>Thompson</td>
+          <td>ella.thompson@example.com</td>
+          <td>1990-06-15</td>
+          <td>Hair Stylist</td>
+          <td>07123 456789</td>
+          <td>123 Rosewood Street, Sheffield</td>
+          <td>456 GP Lane, Sheffield</td>
+          <td>None</td>
+          <td>EllaT</td>
+          <td>2025-07-10</td>
+          <td>
+            <button class="genLink" data-clientid="101">Generate Link</button>
+          </td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Jack</td>
+          <td>Evans</td>
+          <td>jack.evans@example.com</td>
+          <td>1985-11-22</td>
+          <td>Massage Therapist</td>
+          <td>07000 998877</td>
+          <td>22 Oak Grove, Leeds</td>
+          <td>Highfield Surgery, Leeds</td>
+          <td>Asthma</td>
+          <td>JackE</td>
+          <td>2025-07-12</td>
+          <td>
+            <button class="genLink" data-clientid="102">Generate Link</button>
+          </td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/recordDisplay.js"></script>
+  </body>
+</html>
