@@ -1,0 +1,78 @@
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+#recordForm {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+#productList:empty {
+  display: none;
+}
+
+.container {
+  text-align: center;
+  /* margin: 0 auto; */
+}
+
+/* admin.php */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+thead {
+  background: #f0f0f0;
+}
+
+th,
+td {
+  padding: 0.75em;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    padding: 0.75em;
+    background: #fff;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75em;
+    top: 0.75em;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  button.genLink {
+    margin-top: 0.75em;
+    width: 100%;
+  }
+}
